@@ -1,0 +1,21 @@
+.title {
+    display: block;
+    letter-spacing: 3px;
+    font-weight: 370;
+}
+
+.title::first-letter {
+    color: white;
+}
+
+.title::before {
+    content: "";
+    background-color: #0d6efd;
+    position: absolute;
+    left: -1%;
+    width: 38%;
+    height: 90%;
+    top: 10%;
+    border-radius: 5px;
+    z-index: -1;
+}

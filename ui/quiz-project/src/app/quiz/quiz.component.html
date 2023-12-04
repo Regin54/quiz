@@ -1,0 +1,24 @@
+<div class="quiz-container container my-5 d-flex justify-content-center align-items-center flex-column bg-light">
+    <ngb-progressbar class="timer m-3 progress-bar-striped progress-bar-animated" style="width: 60%" type="primary" [value]="25" [showValue]="true"/>
+
+    <div class="question my-3"><h3>What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?</h3></div>
+
+    <div class="answers">
+        <div class="answers-list btn-group d-flex flex-column">
+            <input type="radio" mdbradio class="btn-check" name="answer" id="answer1" autocomplete="off" [checked]="false">
+            <label for="answer1" class="btn btn-outline-primary">Male</label>
+            
+            <input type="radio" mdbradio class="btn-check" name="answer" id="answer2" autocomplete="off" [checked]="false">
+            <label for="answer2" class="btn btn-outline-primary">Female</label>
+
+            <input type="radio" mdbradio class="btn-check" name="answer" id="answer3" autocomplete="off" [checked]="false">
+            <label for="answer3" class="btn btn-outline-primary">Don't want to tell</label>
+
+            <input type="radio" mdbradio class="btn-check" name="answer" id="answer4" autocomplete="off" [checked]="false">
+            <label for="answer4" class="btn btn-outline-primary">Twój stary</label>
+        </div>
+
+        <button class="submit btn btn-success my-4">Submit</button>
+    </div>
+
+</div>

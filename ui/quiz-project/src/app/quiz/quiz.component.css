@@ -1,0 +1,39 @@
+.quiz-container {
+    width: 45%;
+    box-shadow: 4px 6px 12px 1px grey;
+}
+
+.question {
+    word-wrap: normal;
+    width: 80%;
+}
+
+.answers {
+    position: relative;
+    width: 40%;
+}
+
+.answers ul {
+    list-style: none;
+}
+
+.answers button {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.answers label {
+    margin-top: 25px;
+}
+
+.answers-list {
+    width: 100%;
+}
+
+.answers-list label {
+    border-radius: 0px;
+}
+
+.submit {
+    width: 100%;
+}

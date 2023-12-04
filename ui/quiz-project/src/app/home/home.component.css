@@ -1,0 +1,17 @@
+.home-wrapper {
+    width: 50%;
+}
+
+.start-btn {
+    font-size: 32px;
+    box-shadow: 2px 2px 2px 2px gray;
+    transition: .2s ease-in-out;
+}
+
+.start-btn:hover {
+    transform: scale(1.1)
+}
+
+.stats {
+    margin-top: 50px;
+}
