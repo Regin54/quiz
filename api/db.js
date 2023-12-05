@@ -1,20 +1,19 @@
-const { MongoClient } = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
 
-const uri = "mongodb://127.0.0.1:27017";
-const client = new MongoClient(uri);
+const url = "mongodb://0.0.0.0:27017/";
 
-async function run() {
-  try {
-    await client.connect();
-    const db = client.db('quiz');
-    const collection = db.collection('questions');
+async function connect() {
+    const client = new MongoClient(url);
+    try{
+        await client.connect();
 
-    // Find the first document in the collection
-    const first = await collection.findOne();
-    console.log(first);
-  } finally {
-    // Close the database connection when finished or an error occurs
-    await client.close();
-  }
+        const result = await client.db("quiz").collection("questions").find().toArray();
+        console.log(result);
+    }
+    catch(e) {
+        console.log(e);
+    }
+    finally {
+        await client.close();
+    }
 }
-run().catch(console.error);
