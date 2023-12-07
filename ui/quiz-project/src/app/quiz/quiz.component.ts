@@ -13,12 +13,20 @@ export class QuizComponent {
   timerInterval:any;
   seconds:number = 0;
 
+  answers:any = [];
+
+  points:number = 0;
+
   onAnswerSubmit() {
     this.count += 1;
     console.log(this.questions);
     if(this.count == 9) {
       console.log(this.seconds);
     }
+  }
+
+  onAnswerCheck(answer:any) {
+    console.log(answer);
   }
 
   ngOnInit() {
