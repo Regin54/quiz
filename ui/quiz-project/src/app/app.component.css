@@ -1,0 +1,25 @@
+.left-blob {
+    left: -10%;
+    bottom: -5%;
+}
+
+.blob {
+    rotate: 45deg;
+    position: relative;
+    opacity: .5;
+    scale: .9;
+}
+
+.right-blob {
+    right: -10%;
+    bottom: -5%;
+}
+
+.blob-container {
+    position: absolute;
+    bottom: -40%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
