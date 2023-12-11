@@ -1,0 +1,21 @@
+.summary-container {
+    width: 30%;
+    box-shadow: 4px 6px 12px 1px grey;
+    top: 20%;
+}
+
+.summary-progress {
+    width: 75%;
+    height: fit-content;
+    font-size: 20px;
+}
+
+.return-btn {
+    font-size: 24px;
+    margin: 25px;
+    transition: .2s ease-in-out;
+}
+
+.return-btn:hover {
+    transform: scale(1.1);
+}

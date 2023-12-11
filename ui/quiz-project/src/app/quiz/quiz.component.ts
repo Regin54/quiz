@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent {
+  constructor(private _router: Router) { }
+
   questions:any = [];
   questionsOrder:any = [];
   count:number = 0;
@@ -15,23 +17,37 @@ export class QuizComponent {
 
   answers:any = [];
 
+  chosenAnswer:string = "";
+
   points:number = 0;
-
-  onAnswerSubmit() {
-    this.count += 1;
-    console.log(this.questions);
-    if(this.count == 9) {
-      console.log(this.seconds);
-    }
-  }
-
-  onAnswerCheck(answer:any) {
-    console.log(answer);
-  }
+  currentQuestion:any;
 
   ngOnInit() {
+    this.currentQuestion = this.questions[0][this.questionsOrder[this.count]]
+    console.log('siema');
+    
     this.timerInterval = setInterval(() => {
       this.seconds += 1
     }, 1000)
+  }
+
+  onAnswerSubmit() {
+    this.count += 1;
+
+    if(this.count > 9) {
+      this._router.navigate(['/summary']);
+    } else {
+      console.log(this.currentQuestion.correctAnswer);
+
+      if(this.chosenAnswer == this.currentQuestion.correctAnswer) {
+        this.points += 1;
+      }
+    }
+    this.currentQuestion = this.questions[0][this.questionsOrder[this.count]];
+    console.log(this.points);
+  }
+
+  onAnswerCheck(answer:string) {
+    this.chosenAnswer = answer;
   }
 }
