@@ -1,34 +1,24 @@
 <div class="home-wrapper container d-flex justify-content-center align-items-center flex-column">
-    <button class="start-btn btn btn-primary"><a class="nav-link" routerLink="/quiz">Start quiz</a></button>
+    <button class="start-btn btn btn-primary"><a class="nav-link" routerLink="/form">Start quiz</a></button>
 
     <table class="stats table">
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Name</th>
             <th scope="col">Points</th>
-            <th scope="col">Time</th>
-            <th scope="col">Date</th>
+            <th scope="col">Seconds</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>twitter</td>
-          </tr>
+          <ng-container *ngFor="let player of players; index as i">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{player.username}}</td>
+              <td>{{player.points}}</td>
+              <td>{{player.time}}</td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
 </div>

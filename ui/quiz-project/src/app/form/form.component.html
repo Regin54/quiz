@@ -1,0 +1,9 @@
+<div class="form-container container my-5 d-flex justify-content-center align-items-center flex-column bg-light">
+    <h2>Type your name in</h2>
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Username" [(ngModel)]="username">
+    </div>
+
+    <button [disabled]="username == ''" (click)="onSubmit($event)" class="start-btn btn btn-primary"><a class="nav-link">Start quiz</a></button>
+</div>

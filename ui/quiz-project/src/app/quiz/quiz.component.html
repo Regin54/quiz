@@ -1,24 +1,14 @@
 <div class="quiz-container container my-5 d-flex justify-content-center align-items-center flex-column bg-light">
-    <ngb-progressbar class="timer m-3 progress-bar-striped progress-bar-animated" style="width: 60%" type="primary" [value]="25" [showValue]="true"/>
+    <ngb-progressbar class="timer m-3 progress-bar-striped progress-bar-animated" style="width: 60%" type="primary" [value]="progressBarTimer*10"/>
 
-    <div class="question my-3"><h3>What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?What is your gender?</h3></div>
+    <div class="question my-3"><h3>{{questions[0][questionsOrder[count]].question}}</h3></div>
 
     <div class="answers">
-        <div class="answers-list btn-group d-flex flex-column">
-            <input type="radio" mdbradio class="btn-check" name="answer" id="answer1" autocomplete="off" [checked]="false">
-            <label for="answer1" class="btn btn-outline-primary">Male</label>
-            
-            <input type="radio" mdbradio class="btn-check" name="answer" id="answer2" autocomplete="off" [checked]="false">
-            <label for="answer2" class="btn btn-outline-primary">Female</label>
-
-            <input type="radio" mdbradio class="btn-check" name="answer" id="answer3" autocomplete="off" [checked]="false">
-            <label for="answer3" class="btn btn-outline-primary">Don't want to tell</label>
-
-            <input type="radio" mdbradio class="btn-check" name="answer" id="answer4" autocomplete="off" [checked]="false">
-            <label for="answer4" class="btn btn-outline-primary">Twój stary</label>
+        <div class="answers-list btn-group d-flex flex-column" *ngFor="let answer of questions[0][questionsOrder[count]].answers; index as i">
+            <input type="radio" mdbradio class="btn-check" name="answer" id="{{'answer' + i}}" autocomplete="off" [checked]="false" (click)="onAnswerCheck(answer)">
+            <label for="{{'answer' + i}}" class="btn btn-outline-primary">{{answer}}</label>
         </div>
 
-        <button class="submit btn btn-success my-4">Submit</button>
+        <button class="submit btn btn-success my-4" (click)="onAnswerSubmit()">Zatwierdź</button>
     </div>
-
 </div>

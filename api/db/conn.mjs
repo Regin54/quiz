@@ -1,9 +1,8 @@
 import dotenv from "dotenv";
 import {MongoClient} from "mongodb";
 
-dotenv.config({path: "../.env"});
-
-const uri = "mongodb+srv://quiz:Ll7PF4rMpGKcX7yF@cluster0.vkddhgl.mongodb.net/" || "";
+dotenv.config();
+const uri = process.env.ATLAS_URI || "";
 
 let conn;
 async function connect() {
