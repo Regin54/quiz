@@ -1,9 +1,11 @@
 <div class="summary-container container my-5 d-flex justify-content-center align-items-center flex-column bg-light">
     <h2>Result</h2>
 
-    <ngb-progressbar class="summary-progress m-3" type="success" [value]="25" [showValue]="true"/>
+    <ngb-progressbar class="summary-progress m-3" type="success" [value]="progressValue" [showValue]="true"/>
 
-    <h3>Points: <span>8/10</span></h3>
+    <h3>Points: <span>{{points}}/{{maxPoints}}</span></h3>
+    <h3>Time: <span>{{time}} seconds</span></h3>
+    <h4>Name: <span>{{username}}</span></h4>
     
     <button class="return-btn btn btn-primary"><a class="nav-link" routerLink="/">Return</a></button>
 </div>

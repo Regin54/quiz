@@ -1,0 +1,19 @@
+.form-container {
+    width: 30%;
+    box-shadow: 4px 6px 12px 1px grey;
+    top: 20%;
+}
+
+.form-group {
+    margin: 15px;
+}
+
+.start-btn {
+    margin: 10px;
+    font-size: 24px;
+    transition: .2s ease-in-out;
+}
+
+.start-btn:hover {
+    transform: scale(1.1);
+}

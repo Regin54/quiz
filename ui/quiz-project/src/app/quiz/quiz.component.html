@@ -1,5 +1,5 @@
 <div class="quiz-container container my-5 d-flex justify-content-center align-items-center flex-column bg-light">
-    <ngb-progressbar class="timer m-3 progress-bar-striped progress-bar-animated" style="width: 60%" type="primary" [value]="25" [showValue]="true"/>
+    <ngb-progressbar class="timer m-3 progress-bar-striped progress-bar-animated" style="width: 60%" type="primary" [value]="progressBarTimer*10"/>
 
     <div class="question my-3"><h3>{{questions[0][questionsOrder[count]].question}}</h3></div>
 
@@ -9,6 +9,6 @@
             <label for="{{'answer' + i}}" class="btn btn-outline-primary">{{answer}}</label>
         </div>
 
-        <button class="submit btn btn-success my-4" (click)="onAnswerSubmit()">Submit</button>
+        <button class="submit btn btn-success my-4" (click)="onAnswerSubmit()">Zatwierdź</button>
     </div>
 </div>
