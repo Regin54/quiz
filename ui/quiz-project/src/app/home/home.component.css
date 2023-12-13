@@ -1,5 +1,6 @@
 .home-wrapper {
     width: 50%;
+    overflow: visible;
 }
 
 .start-btn {
@@ -14,4 +15,11 @@
 
 .stats {
     margin-top: 50px;
+    overflow-y: auto;
+}
+
+.table-container {
+    max-height: 60vh;
+    width: 70%;
+    overflow: auto;
 }
